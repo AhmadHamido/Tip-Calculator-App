@@ -1,44 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap" rel="stylesheet">
-    <link href="style.css" rel="stylesheet">
-    <script src="script.js" defer></script>
-    <title>Tip Calculator App</title>
-</head>
-<body>
-    <div class="container">
-        <header>
-            <h1>SPLITTER</h1>
-        </header>
-        <main>
-            <section class="bill-container">
-                <p class="section-title">Bill</p>
-                <div class="bill-amount" id="bill-amount">0</div>
-            </section>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+        <link href="style.css" rel="stylesheet">
+        <script src="script.js" defer></script>
+        <title>Tip Calculator App</title>
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <h1>SPLI<br>TTER</h1>
+            </header>
+            <main>
+                <section class="bill-container">
+                    <p class="section-title">Bill</p>
+                    <div class="section-details">
+                        <img src="images/icon-dollar.svg" alt="dollar-sign">
+                        <p class="num" id="num">0</p>
+                    </div>
+                </section>
 
-            <section class="tip-container">
-                <p class="section-title">Select Tip %</p>
-                <button>5%</button>
-                <button>10%</button>
-                <button>15%</button>
-                <button>25%</button>
-                <button>50%</button>
-                <button>Custom</button>
-            </section>
+                <section class="tip-container">
+                    <p class="section-title">Select Tip %</p>
+                    <button class="section-btn" id="5-percent">5%</button>
+                    <button class="section-btn" id="10-percent">10%</button>
+                    <button class="section-btn" id="15-percent">15%</button>
+                    <button class="section-btn" id="25-percent">25%</button>
+                    <button class="section-btn" id="50-percent">50%</button>
+                    <button class="section-btn custom-btn" id="custom-btn">Custom</button>
+                </section>
 
-            <section class="people-container">
-                <p class="section-title">Number of People</p>
-                <div class="counter">0</div>
-            </section>
+                <section class="people-container">
+                    <p class="section-title">Number of People</p>
+                    <p class="section-error"></p>
+                    <div class="section-details">
+                        <img class="section-img" src="images/icon-person.svg" alt="person-icon">
+                        <p class="section-num" id="section-num">0</p>
+                    </div>
+                </section>
 
-            <section class="total-container">
-                
-            </section>
-        </main>
-    </div>
-</body>
+                <section class="total-container">
+                    <div class="total-subcontainer total-upper">
+                        <p class="tip-text">
+                            Tip Amount<br>
+                            <span class="tip-span">/ person</span>
+                        </p>
+                        <p class="tip-num" id="tip-num">0</p>
+                    </div>
+                    <div class="total-subcontainer total-lower">
+                        <p class="total-text">
+                            Total<br>
+                            <span class="total-span">/ person</span>
+                        </p>
+                        <p class="total-num" id="total-num">0</p>
+                    </div>
+                    <button class="reset-btn">RESET</button>
+                </section>
+            </main>
+        </div>
+    </body>
 </html>

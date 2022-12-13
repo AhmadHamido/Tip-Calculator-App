@@ -6,4 +6,57 @@
 
 body {
     font-family: 'Space Mono', monospace;
+    background: #C5E4E7;
+}
+
+/* ==============
+Typography
+============== */
+
+
+/* === buttons === */
+
+button {
+    font-family: 'Space Mono', monospace;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5em 1em;
+}
+
+.section-btn {
+    background: #00474B;
+    color: #fff;
+}
+
+.custom-btn {
+    background: #F3F9FA;
+    color: #547878;
+}
+
+.reset-btn {
+    background: #26C2AE;
+    color: #00474B;
+}
+
+.section-btn:hover,
+.section-btn:focus {
+    background: #26C2AE;
+    color: black;
+}
+
+.reset-btn:hover,
+.reset-btn:focus {
+    background-color: #9FE8DF;
+}
+
+/* ==============
+Layout
+============== */
+
+main {
+    background: #fff;
+}
+
+.section-details {
+    background: #F3F9FA;
 }
