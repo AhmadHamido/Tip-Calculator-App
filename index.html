@@ -16,30 +16,24 @@
             </header>
             <main>
                 <section class="bill-container">
-                    <p class="section-title">Bill</p>
-                    <div class="section-details">
-                        <img src="images/icon-dollar.svg" alt="dollar-sign">
-                        <p class="num" id="num">0</p>
-                    </div>
+                    <label for="input-amount" class="section-title">Bill</label>
+                    <input class="input-amount" id="input-amount" type="text" inputmode="numeric">
                 </section>
 
                 <section class="tip-container">
                     <p class="section-title">Select Tip %</p>
-                    <button class="section-btn" id="5-percent">5%</button>
-                    <button class="section-btn" id="10-percent">10%</button>
-                    <button class="section-btn" id="15-percent">15%</button>
-                    <button class="section-btn" id="25-percent">25%</button>
-                    <button class="section-btn" id="50-percent">50%</button>
+                    <button class="section-btn" id="5%">5%</button>
+                    <button class="section-btn" id="10%">10%</button>
+                    <button class="section-btn" id="15%">15%</button>
+                    <button class="section-btn" id="25%">25%</button>
+                    <button class="section-btn" id="50%">50%</button>
                     <button class="section-btn custom-btn" id="custom-btn">Custom</button>
                 </section>
 
                 <section class="people-container">
-                    <p class="section-title">Number of People</p>
-                    <p class="section-error"></p>
-                    <div class="section-details">
-                        <img class="section-img" src="images/icon-person.svg" alt="person-icon">
-                        <p class="section-num" id="section-num">0</p>
-                    </div>
+                    <label class="section-title" for="input-people">Number of People</label>
+                    <p class="section-error" id="section-error"></p>
+                    <input type="text" inputmode="numeric" class="input-people" id="input-people">
                 </section>
 
                 <section class="total-container">
@@ -57,7 +51,7 @@
                         </p>
                         <p class="total-num" id="total-num">0</p>
                     </div>
-                    <button class="reset-btn">RESET</button>
+                    <button class="reset-btn" id="reset-btn">RESET</button>
                 </section>
             </main>
         </div>

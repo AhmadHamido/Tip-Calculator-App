@@ -2,10 +2,10 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Space Mono', monospace;
 }
 
 body {
-    font-family: 'Space Mono', monospace;
     background: #C5E4E7;
 }
 
@@ -13,19 +13,75 @@ body {
 Typography
 ============== */
 
+.section-title {
+    color: #5E7A7D;
+}
+
+.input-amount {
+    background-image: url(images/icon-dollar.svg);
+}
+
+.input-people {
+    background-image: url(images/icon-person.svg);
+}
+
+.input-amount,
+.input-people {
+    display: block;
+    background-color: #F3F9FA;
+    background-repeat: no-repeat;
+    background-position: 2% center;
+    width: 100%;
+    border: none;
+    text-align: right;
+}
+
+.input-amount,
+.input-people,
+.reset-btn {
+    color: #00474B;
+}
+
+.tip-text,
+.total-text,
+.section-btn {
+    color: #fff;
+}
+
+.tip-span,
+.total-span {
+    color: #7F9D9F;
+    font-size: 0.8125rem;
+}
+
+.input-amount,
+.input-people,
+.tip-num,
+.total-num {
+    font-size: 2rem;
+}
+
+.tip-num,
+.total-num {
+    color: #26C2AE;
+}
 
 /* === buttons === */
 
 button {
     font-family: 'Space Mono', monospace;
     border: none;
-    border-radius: 5px;
     padding: 0.5em 1em;
+}
+
+.section-btn,
+.custom-btn,
+.section-num {
+    font-size: 1.5rem;
 }
 
 .section-btn {
     background: #00474B;
-    color: #fff;
 }
 
 .custom-btn {
@@ -35,7 +91,7 @@ button {
 
 .reset-btn {
     background: #26C2AE;
-    color: #00474B;
+    font-size: 1.25rem;
 }
 
 .section-btn:hover,
@@ -55,8 +111,23 @@ Layout
 
 main {
     background: #fff;
+    height: 100vh;
 }
 
-.section-details {
-    background: #F3F9FA;
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
+}
+
+.total-container {
+    background: #00474B;
+}
+
+.input-amount,
+.input-people,
+.total-container,
+button {
+    border-radius: 5px;
 }
