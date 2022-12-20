@@ -3,6 +3,7 @@ const inputPeople = document.getElementById('input-people');
 const tipNum = document.getElementById('tip-num');
 const totalNum = document.getElementById('total-num');
 const sectionError = document.getElementById('section-error');
+const customBtn = document.getElementById('custom-btn');
 
 document.addEventListener('click', e => {
     if (e.target.id === '5%') {
@@ -21,7 +22,12 @@ document.addEventListener('click', e => {
         fiftyPercent();
     }
     else if (e.target.id === 'custom-btn') {
-        customTip();
+        if (customBtn.type === 'button') {
+            replaceCustomBtnType();
+        }
+        else {
+            handleCustomTip();
+        }
     }
     else if (e.target.id === 'reset-btn') {
         handleResetBtn();
@@ -29,7 +35,6 @@ document.addEventListener('click', e => {
 });
 
 function calculateTip(num) {
-    console.log(typeof inputAmount.value);
     if(!isNaN(inputAmount.value)) {
         if (!inputPeople.value) {
             sectionError.textContent = "Can't be zero";
@@ -47,7 +52,6 @@ function calculateTip(num) {
             }
         }
     }
-    
 }
 
 
@@ -71,13 +75,30 @@ function fiftyPercent() {
     calculateTip(0.50);
 }
 
-function customTip() {
-    console.log("button working");
+function replaceCustomBtnType() {
+    customBtn.className = "custom-btn-change";
+    customBtn.type = "text";
+    customBtn.value = '';
 }
+
+function handleCustomTip() {
+    if (customBtn.value) {
+        calculateTip(customBtn.value / 100);
+    }
+}
+
+
 
 function handleResetBtn() {
     inputAmount.value = '';
     inputPeople.value = '';
+    customBtn.className = 'custom-btn';
+    customBtn.type = 'button';
+    customBtn.value = 'Custom';
     tipNum.textContent = 0;
     totalNum.textContent = 0;
+
+    if (sectionError.textContent) {
+        sectionError.textContent = '';
+    }
 }

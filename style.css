@@ -17,6 +17,10 @@ Typography
     color: #5E7A7D;
 }
 
+.section-error {
+    color: #E17457;
+}
+
 .input-amount {
     background-image: url(images/icon-dollar.svg);
 }
@@ -33,6 +37,11 @@ Typography
     background-position: 2% center;
     width: 100%;
     border: none;
+}
+
+.input-amount,
+.input-people, 
+.custom-btn-change {
     text-align: right;
 }
 
@@ -66,17 +75,30 @@ Typography
     color: #26C2AE;
 }
 
+button,
+.input-amount,
+.input-people,
+.total-container,
+.custom-btn,
+.custom-btn-change {
+    border-radius: 5px;
+}
+
 /* === buttons === */
 
-button {
+button,
+.custom-btn,
+.custom-btn-change {
     font-family: 'Space Mono', monospace;
     border: none;
     padding: 0.5em 1em;
+    cursor: pointer;
 }
 
+.section-num,
 .section-btn,
 .custom-btn,
-.section-num {
+.custom-btn-change {
     font-size: 1.5rem;
 }
 
@@ -85,8 +107,12 @@ button {
 }
 
 .custom-btn {
-    background: #F3F9FA;
     color: #547878;
+}
+
+.custom-btn,
+.custom-btn-change {
+    background: #F3F9FA;
 }
 
 .reset-btn {
@@ -96,13 +122,18 @@ button {
 
 .section-btn:hover,
 .section-btn:focus {
-    background: #26C2AE;
     color: black;
 }
 
 .reset-btn:hover,
-.reset-btn:focus {
-    background-color: #9FE8DF;
+.reset-btn:focus,
+.section-btn:hover,
+.section-btn:focus {
+    background: #9FE8DF;
+}
+
+.custom-btn-change {
+    color: #00474B;
 }
 
 /* ==============
@@ -125,9 +156,3 @@ header {
     background: #00474B;
 }
 
-.input-amount,
-.input-people,
-.total-container,
-button {
-    border-radius: 5px;
-}

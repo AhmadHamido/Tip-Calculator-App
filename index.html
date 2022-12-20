@@ -17,7 +17,8 @@
             <main>
                 <section class="bill-container">
                     <label for="input-amount" class="section-title">Bill</label>
-                    <input class="input-amount" id="input-amount" type="text" inputmode="numeric">
+                    <p class="section-error" id="section-error-bill"></p>
+                    <input class="input-amount" id="input-amount" type="text" inputmode="numeric" autocomplete="off">
                 </section>
 
                 <section class="tip-container">
@@ -27,13 +28,13 @@
                     <button class="section-btn" id="15%">15%</button>
                     <button class="section-btn" id="25%">25%</button>
                     <button class="section-btn" id="50%">50%</button>
-                    <button class="section-btn custom-btn" id="custom-btn">Custom</button>
+                    <input class="section-btn custom-btn" type="button" value="Custom" id="custom-btn">
                 </section>
 
                 <section class="people-container">
                     <label class="section-title" for="input-people">Number of People</label>
                     <p class="section-error" id="section-error"></p>
-                    <input type="text" inputmode="numeric" class="input-people" id="input-people">
+                    <input type="text" inputmode="numeric" class="input-people" id="input-people" autocomplete="off">
                 </section>
 
                 <section class="total-container">
