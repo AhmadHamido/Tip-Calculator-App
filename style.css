@@ -17,13 +17,28 @@ h1 {
     color: #3D6666;
 }
 
+.section-title,
+.section-error,
+.total-subcontainer {
+    align-self: center;
+}
+
+.tip-container .section-title {
+    align-self: end;
+}
+
 .section-title {
     color: #5E7A7D;
-    align-self: end;
 }
 
 .section-error {
     color: #E17457;
+}
+
+.section-error,
+.tip-num,
+.total-num {
+    justify-self: end;
 }
 
 .input-amount {
@@ -42,6 +57,8 @@ h1 {
     background-position: 2% center;
     width: 100%;
     border: none;
+    padding-right: 0.25em;
+    grid-column: 1 / -1;
 }
 
 .input-amount,
@@ -146,23 +163,24 @@ Layout
 ============== */
 
 main,
-.bill-container,
-.tip-container,
-.people-container {
+main section,
+.total-subcontainer {
     display: grid;
 }
 
 .bill-container,
-.tip-container,
 .people-container {
-    margin-bottom: 1.5em;
+    grid-template: repeat(2, 60px) / repeat(2, auto);
 }
 
 main {
     background: #fff;
-    height: 130vh;
+    height: 120vh;
     border-radius: 5px 5px 0 0;
-    grid-template-columns: 1.2em auto 1.2em;
+    grid-template: 
+        150px 330px 150px auto 60px
+        /
+        1.2em auto 1.2em;
 }
 
 header {
@@ -174,24 +192,29 @@ header {
 
 .bill-container {
     margin-top: 1.5em;
-    grid-template: repeat(2, auto) / repeat(2, auto);
 }
 
 .total-container {
     background: #00474B;
+    grid-template: repeat(2, auto) 50px 20px/ 1.2em auto 1.2em;
 }
 
 .tip-container {
-    grid-template: repeat(4, 60px) / repeat(2, minmax(151.55px, 200px));
+    grid-template: repeat(4, 60px) / repeat(2, minmax(151.55px, 300px));
     grid-gap: 15px;
 }
 
-/* === buttons === */
+.total-subcontainer {
+    grid-template-columns: repeat(2, auto);
+}
 
 main section,
 .ten-percent,
 .twentyfive-percent,
-.custom-btn {
+.custom-btn,
+.section-error,
+.total-subcontainer,
+.reset-btn {
     grid-column: 2;
 }
 

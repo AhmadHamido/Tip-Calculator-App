@@ -60,8 +60,8 @@ function calculateTip(num) {
             const tipPerPerson = inputAmount.value * num / inputPeople.value;
             const totalTipAmount = inputAmount.value / inputPeople.value + tipPerPerson;
         
-            tipNum.textContent = tipPerPerson.toFixed(2);
-            totalNum.textContent = totalTipAmount.toFixed(2);
+            tipNum.textContent = "$" + tipPerPerson.toFixed(2);
+            totalNum.textContent = "$" + totalTipAmount.toFixed(2);
 
             if (sectionError.textContent) {
                 sectionError.textContent = '';
@@ -115,8 +115,8 @@ function handleResetBtn() {
     customBtn.className = 'custom-btn';
     customBtn.type = 'button';
     customBtn.value = 'Custom';
-    tipNum.textContent = 0;
-    totalNum.textContent = 0;
+    tipNum.textContent = "$0.00";
+    totalNum.textContent = "$0.00";
 
     if (sectionError.textContent) {
         sectionError.textContent = '';
