@@ -3,6 +3,7 @@ const inputPeople = document.getElementById('input-people');
 const tipNum = document.getElementById('tip-num');
 const totalNum = document.getElementById('total-num');
 const sectionError = document.getElementById('section-error');
+const sectionErrorBill = document.getElementById('section-error-bill');
 const customBtn = document.getElementById('custom-btn');
 
 document.addEventListener('click', e => {
@@ -36,8 +37,23 @@ document.addEventListener('click', e => {
 
 function calculateTip(num) {
     if(!isNaN(inputAmount.value)) {
-        if (!inputPeople.value) {
+        if (!inputAmount.value && !inputPeople.value) {
+            sectionErrorBill.textContent = "Can't be zero";
             sectionError.textContent = "Can't be zero";
+            return;
+        }
+        else if (!inputPeople.value) {
+            sectionError.textContent = "Can't be zero";
+            if (sectionErrorBill.textContent) {
+                sectionErrorBill.textContent = '';
+            }
+            return;
+        }
+        else if (!inputAmount.value) {
+            sectionErrorBill.textContent = "Can't be zero";
+            if (sectionError.textContent) {
+                sectionError.textContent = '';
+            }
             return;
         }
         else {
@@ -49,6 +65,10 @@ function calculateTip(num) {
 
             if (sectionError.textContent) {
                 sectionError.textContent = '';
+            }
+            
+            if (sectionErrorBill.textContent) {
+                sectionErrorBill.textContent = '';
             }
         }
     }
