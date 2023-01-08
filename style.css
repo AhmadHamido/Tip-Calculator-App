@@ -158,6 +158,12 @@ button,
     color: #00474B;
 }
 
+.custom-btn-change:active,
+.custom-btn-change:focus {
+    border: 2px solid #26C2AE;
+    outline: none;
+}
+
 /* ==============
 Layout
 ============== */
@@ -178,7 +184,7 @@ main {
     height: 120vh;
     border-radius: 5px 5px 0 0;
     grid-template: 
-        150px 330px 150px auto 60px
+        150px 330px 170px auto 60px
         /
         1.2em auto 1.2em;
 }

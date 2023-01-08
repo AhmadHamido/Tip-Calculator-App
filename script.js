@@ -9,18 +9,23 @@ const customBtn = document.getElementById('custom-btn');
 document.addEventListener('click', e => {
     if (e.target.id === '5%') {
         fivePercent();
+        isNotCustomBtn(e);
     }
     else if (e.target.id === '10%') {
         tenPercent();
+        isNotCustomBtn(e);
     }
     else if (e.target.id === '15%') {
         fifteenPercent();
+        isNotCustomBtn(e);
     }
     else if (e.target.id === '25%') {
         twentyFivePercent();
+        isNotCustomBtn(e);
     }
     else if (e.target.id === '50%') {
         fiftyPercent();
+        isNotCustomBtn(e);
     }
     else if (e.target.id === 'custom-btn') {
         if (customBtn.type === 'button') {
@@ -33,26 +38,35 @@ document.addEventListener('click', e => {
     else if (e.target.id === 'reset-btn') {
         handleResetBtn();
     }
+    else if (e.target.id != 'custom-btn') {
+        resetCustomBtn();
+    }
 });
 
 function calculateTip(num) {
     if(!isNaN(inputAmount.value)) {
         if (!inputAmount.value && !inputPeople.value) {
             sectionErrorBill.textContent = "Can't be zero";
+            inputAmount.style.border = "2px #E17457 solid";
             sectionError.textContent = "Can't be zero";
+            inputPeople.style.border = "2px #E17457 solid";
             return;
         }
         else if (!inputPeople.value) {
             sectionError.textContent = "Can't be zero";
+            inputPeople.style.border = "2px #E17457 solid";
             if (sectionErrorBill.textContent) {
                 sectionErrorBill.textContent = '';
+                inputAmount.style.border = "none";
             }
             return;
         }
         else if (!inputAmount.value) {
             sectionErrorBill.textContent = "Can't be zero";
+            inputAmount.style.border = "2px #E17457 solid";
             if (sectionError.textContent) {
                 sectionError.textContent = '';
+                inputPeople.style.border = "none";
             }
             return;
         }
@@ -63,13 +77,7 @@ function calculateTip(num) {
             tipNum.textContent = "$" + tipPerPerson.toFixed(2);
             totalNum.textContent = "$" + totalTipAmount.toFixed(2);
 
-            if (sectionError.textContent) {
-                sectionError.textContent = '';
-            }
-            
-            if (sectionErrorBill.textContent) {
-                sectionErrorBill.textContent = '';
-            }
+            handleSectionErrors();
         }
     }
 }
@@ -107,18 +115,35 @@ function handleCustomTip() {
     }
 }
 
+function resetCustomBtn() {
+    customBtn.className = 'custom-btn';
+    customBtn.type = 'button';
+    customBtn.value = 'Custom';
+}
 
+function isNotCustomBtn(e) {
+    if (e.target.id != customBtn) {
+        resetCustomBtn();
+    }
+}
 
 function handleResetBtn() {
     inputAmount.value = '';
     inputPeople.value = '';
-    customBtn.className = 'custom-btn';
-    customBtn.type = 'button';
-    customBtn.value = 'Custom';
     tipNum.textContent = "$0.00";
     totalNum.textContent = "$0.00";
+    resetCustomBtn();
+    handleSectionErrors();
+}
 
+function handleSectionErrors() {
     if (sectionError.textContent) {
         sectionError.textContent = '';
+        inputPeople.style.border = "none";
+    }
+    
+    if (sectionErrorBill.textContent) {
+        sectionErrorBill.textContent = '';
+        inputAmount.style.border = "none";
     }
 }
