@@ -17,14 +17,8 @@ h1 {
     color: #3D6666;
 }
 
-.section-title,
-.section-error,
 .total-subcontainer {
     align-self: center;
-}
-
-.tip-container .section-title {
-    align-self: end;
 }
 
 .section-title {
@@ -68,8 +62,7 @@ h1 {
 }
 
 .input-amount,
-.input-people,
-.reset-btn {
+.input-people {
     color: #00474B;
 }
 
@@ -142,19 +135,17 @@ button,
     font-size: 1.25rem;
 }
 
-.section-btn:hover,
-.section-btn:focus {
-    color: black;
+.reset-btn,
+.custom-btn-change {
+    color: #00474B;
 }
 
+.custom-btn:hover,
 .reset-btn:hover,
 .reset-btn:focus,
 .section-btn:hover,
 .section-btn:focus {
     background: #9FE8DF;
-}
-
-.custom-btn-change {
     color: #00474B;
 }
 
@@ -180,12 +171,13 @@ main section,
 
 .bill-container,
 .people-container {
-    grid-template: repeat(2, 60px) / repeat(2, auto);
+    grid-template: 20px 48px / repeat(2, auto);
+    grid-row-gap: 15px;
 }
 
 main {
     background: #fff;
-    height: 120vh;
+    /* height: 110vh; */
     border-radius: 5px 5px 0 0;
     grid-template: 
         150px 330px 170px auto 60px
@@ -210,12 +202,13 @@ header {
 }
 
 .tip-container {
-    grid-template: repeat(4, 60px) / repeat(2, minmax(151.55px, 300px));
+    grid-template: 20px repeat(3, 60px) / repeat(2, minmax(151.55px, 300px));
     grid-gap: 15px;
 }
 
 .total-subcontainer {
     grid-template-columns: repeat(2, auto);
+    margin: 2em 0;
 }
 
 main section,
@@ -230,4 +223,70 @@ main section,
 
 .five-percent {
     grid-column: 1;
+}
+
+/* ==============
+Media Query
+============== */
+
+@media (min-width: 600px) {
+    .tip-container {
+        grid-template: 20px repeat(2, 60px) / repeat(3, minmax(120px, 300px));
+    }
+
+    .custom-btn,
+    .custom-btn-change {
+        grid-column: 3;
+        grid-row: 3;
+    }
+
+    .twentyfive-percent {
+        grid-row: 3;
+        grid-column: 1;
+    }
+}
+
+@media (min-width: 811px) {
+    .tip-container .section-title {
+        align-self: center;
+    }
+
+    main {
+        margin: auto;
+        max-width: 920px;
+        height: 100%;
+        height: 481px;
+        grid-template: 30px repeat(3, auto) 30px / repeat(2, 50%);
+        grid-row-gap: 20px;
+    }
+    .bill-container,
+    .tip-container,
+    .people-container {
+        grid-column: 1;
+    }
+
+    .bill-container {
+        grid-row: 2;
+        margin-top: 0;
+    }
+
+    .tip-container {
+        grid-row: 3;
+    }
+
+    .people-container {
+        grid-row: 4;
+    }
+
+    .bill-container,
+    .tip-container,
+    .people-container,
+    .total-container {
+        width: 90%;
+        justify-self: center;
+    }
+
+    .total-container {
+        grid-row: 2 / 5;
+    }
 }
