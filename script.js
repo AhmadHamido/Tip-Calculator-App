@@ -35,12 +35,19 @@ document.addEventListener('click', e => {
             handleCustomTip();
         }
     }
-    else if (e.target.id === 'reset-btn') {
-        handleResetBtn();
-    }
     else if (e.target.id != 'custom-btn') {
         resetCustomBtn();
     }
+    else if (e.target.id === 'input-amount' || e.target.id === 'input-people') {
+        e.target.click();
+        e.target.focus();
+    }
+    
+    if (e.target.id === 'reset-btn') {
+        handleResetBtn();
+    }
+
+
 });
 
 function calculateTip(num) {

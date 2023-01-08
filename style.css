@@ -159,7 +159,11 @@ button,
 }
 
 .custom-btn-change:active,
-.custom-btn-change:focus {
+.custom-btn-change:focus,
+.input-amount:active,
+.input-amount:focus,
+.input-people:active,
+.input-people:focus {
     border: 2px solid #26C2AE;
     outline: none;
 }
