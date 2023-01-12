@@ -42,7 +42,7 @@ document.addEventListener('click', e => {
         e.target.click();
         e.target.focus();
     }
-    
+
     if (e.target.id === 'reset-btn') {
         handleResetBtn();
     }
@@ -53,14 +53,11 @@ document.addEventListener('click', e => {
 function calculateTip(num) {
     if(!isNaN(inputAmount.value)) {
         if (!inputAmount.value && !inputPeople.value) {
-            sectionErrorBill.textContent = "Can't be zero";
-            inputAmount.style.border = "2px #E17457 solid";
-            sectionError.textContent = "Can't be zero";
-            inputPeople.style.border = "2px #E17457 solid";
+            handleNoValueError();
             return;
         }
-        else if (!inputPeople.value) {
-            sectionError.textContent = "Can't be zero";
+        else if (!inputPeople.value || inputPeople.value <= 0) {
+            sectionError.textContent = "Can't be zero/empty";
             inputPeople.style.border = "2px #E17457 solid";
             if (sectionErrorBill.textContent) {
                 sectionErrorBill.textContent = '';
@@ -68,8 +65,8 @@ function calculateTip(num) {
             }
             return;
         }
-        else if (!inputAmount.value) {
-            sectionErrorBill.textContent = "Can't be zero";
+        else if (!inputAmount.value || inputAmount.value <= 0) {
+            sectionErrorBill.textContent = "Can't be zero/empty";
             inputAmount.style.border = "2px #E17457 solid";
             if (sectionError.textContent) {
                 sectionError.textContent = '';
@@ -120,6 +117,13 @@ function handleCustomTip() {
     if (customBtn.value) {
         calculateTip(customBtn.value / 100);
     }
+}
+
+function handleNoValueError() {
+    sectionErrorBill.textContent = "Can't be empty";
+    inputAmount.style.border = "2px #E17457 solid";
+    sectionError.textContent = "Can't be empty";
+    inputPeople.style.border = "2px #E17457 solid";
 }
 
 function resetCustomBtn() {

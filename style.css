@@ -177,10 +177,9 @@ main section,
 
 main {
     background: #fff;
-    /* height: 110vh; */
     border-radius: 5px 5px 0 0;
     grid-template: 
-        150px 330px 170px auto 60px
+        150px 300px 130px auto 60px
         /
         1.2em auto 1.2em;
 }
@@ -230,8 +229,16 @@ Media Query
 ============== */
 
 @media (min-width: 600px) {
+    main {
+        grid-template: 
+        150px 220px 130px auto 60px
+        /
+        1.2em auto 1.2em;
+    }
+
     .tip-container {
         grid-template: 20px repeat(2, 60px) / repeat(3, minmax(120px, 300px));
+        /* align-self: center; */
     }
 
     .custom-btn,
