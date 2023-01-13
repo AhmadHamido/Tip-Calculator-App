@@ -261,7 +261,6 @@ Media Query
     main {
         margin: auto;
         max-width: 920px;
-        height: 100%;
         height: 481px;
         grid-template: 30px repeat(3, auto) 30px / repeat(2, 50%);
         grid-row-gap: 20px;
